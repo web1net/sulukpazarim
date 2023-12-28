@@ -1,0 +1,151 @@
+<html>
+<head>
+    <title>Ürün Satış Sitesi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+        }
+        .navbar a:hover {
+            color: yellow;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .form {
+            width: 500px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 2px 2px 5px #999;
+        }
+        .form h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .form label {
+            display: block;
+            margin: 10px 0;
+        }
+        .form input, .form textarea {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .form button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .form button:hover {
+            background-color: lime;
+        }
+        .form p {
+            color: red;
+            display: none;
+        }
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+        .footer p {
+            margin: 10px;
+        }
+    </style>
+    <script>
+        // İletişim formunu seç
+        var form = document.querySelector(".form");
+        // Formun gönderilmesini dinle
+        form.addEventListener("submit", function(event) {
+            // Varsayılan işlemi engelle
+            event.preventDefault();
+            // Formdaki tüm girdileri seç
+            var inputs = form.querySelectorAll("input, textarea");
+            // Girdilerin boş olup olmadığını kontrol et
+            for (var i = 0; i < inputs.length; i++) {
+                // Eğer girdi boşsa
+                if (inputs[i].value.trim() == "") {
+                    // Hata mesajını göster
+                    inputs[i].nextElementSibling.style.display = "block";
+                    // Formu gönderme
+                    return;
+                } else {
+                    // Hata mesajını gizle
+                    inputs[i].nextElementSibling.style.display = "none";
+                }
+            }
+            // Formu gönder
+            form.submit();
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">Ürün Satış Sitesi</div>
+            <div class="menu">
+                <a href="index.html">Ana Sayfa</a>
+                <a href="products.html">Ürünler</a>
+                <a href="contact.html">İletişim</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="form">
+                <h2>Bize Ulaşın</h2>
+                <form method="post" action="send.php">
+                    <label for="name">Adınız</label>
+                    <input type="text" id="name" name="name" placeholder="Adınızı girin">
+                    <p>Lütfen adınızı girin.</p>
+                    <label for="email">E-posta Adresiniz</label>
+                    <input type="email" id="email" name="email" placeholder="E-posta adresinizi girin">
+                    <p>Lütfen e-posta adresinizi girin.</p>
+                    <label for="subject">Konu</label>
+                    <input type="text" id="subject" name="subject" placeholder="Konuyu girin">
+                    <p>Lütfen konuyu girin.</p>
+                    <label for="message">Mesajınız</label>
+                    <textarea id="message" name="message" placeholder="Mesajınızı girin" rows="10"></textarea>
+                    <p>Lütfen mesajınızı girin.</p>
+                    <button type="submit">Gönder</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Tüm hakları saklıdır. © 2023</p>
+        </div>
+    </div>
+</body>
+</html>
