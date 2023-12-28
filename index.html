@@ -33,33 +33,28 @@
         }
         .content {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             margin: 20px;
         }
-        .card {
-            width: 300px;
-            height: 400px;
-            margin: 10px;
-            border: 1px solid #ccc;
-            box-shadow: 2px 2px 5px #999;
-        }
-        .card img {
+        .hero {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: 500px;
+            background-image: url("urun.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .card h3 {
-            text-align: center;
-            margin: 10px;
+        .hero h1 {
+            color: white;
+            font-size: 48px;
+            text-shadow: 2px 2px 5px black;
         }
-        .card p {
-            text-align: justify;
-            margin: 10px;
-        }
-        .card button {
+        .hero button {
             display: block;
-            width: 80%;
+            width: 200px;
             margin: 10px auto;
             padding: 10px;
             background-color: green;
@@ -67,8 +62,38 @@
             border: none;
             cursor: pointer;
         }
-        .card button:hover {
+        .hero button:hover {
             background-color: lime;
+        }
+        .features {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .feature {
+            width: 300px;
+            height: 300px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 5px #999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .feature img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+        .feature h3 {
+            text-align: center;
+            margin: 10px;
+        }
+        .feature p {
+            text-align: justify;
+            margin: 10px;
         }
         .footer {
             display: flex;
@@ -94,23 +119,29 @@
             </div>
         </div>
         <div class="content">
-            <div class="card">
-                <img src="urun1.jpg" alt="Ürün 1">
-                <h3>Ürün 1</h3>
-                <p>Bu ürün çok kaliteli ve uygun fiyatlıdır. Sipariş vermek için hemen tıklayın.</p>
-                <button>Sipariş Ver</button>
+            <div class="hero">
+                <div class="caption">
+                    <h1>Ürünümüzü Tanıyın</h1>
+                    <p>Bu ürün çok kaliteli ve uygun fiyatlıdır. Sipariş vermek için hemen tıklayın.</p>
+                    <button>Sipariş Ver</button>
+                </div>
             </div>
-            <div class="card">
-                <img src="urun2.jpg" alt="Ürün 2">
-                <h3>Ürün 2</h3>
-                <p>Bu ürün çok kaliteli ve uygun fiyatlıdır. Sipariş vermek için hemen tıklayın.</p>
-                <button>Sipariş Ver</button>
-            </div>
-            <div class="card">
-                <img src="urun3.jpg" alt="Ürün 3">
-                <h3>Ürün 3</h3>
-                <p>Bu ürün çok kaliteli ve uygun fiyatlıdır. Sipariş vermek için hemen tıklayın.</p>
-                <button>Sipariş Ver</button>
+            <div class="features">
+                <div class="feature">
+                    <img src="kalite.png" alt="Kalite">
+                    <h3>Kaliteli Malzeme</h3>
+                    <p>Bu ürün, en kaliteli malzemelerden üretilmiştir. Dayanıklı, sağlam ve uzun ömürlüdür.</p>
+                </div>
+                <div class="feature">
+                    <img src="tasarim.png" alt="Tasarım">
+                    <h3>Şık Tasarım</h3>
+                    <p>Bu ürün, modern ve şık bir tasarıma sahiptir. Her ortama uyum sağlar ve göz alıcıdır.</p>
+                </div>
+                <div class="feature">
+                    <img src="fiyat.png" alt="Fiyat">
+                    <h3>Uygun Fiyat</h3>
+                    <p>Bu ürün, piyasadaki en uygun fiyatlardan birine sahiptir. Kaliteyi ucuza almak isteyenler için idealdir.</p>
+                </div>
             </div>
         </div>
         <div class="footer">
